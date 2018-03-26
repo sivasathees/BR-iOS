@@ -1,0 +1,23 @@
+PODS:
+  - JGProgressHUD (2.0.1)
+  - MobilePlayer (1.2.0)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - JGProgressHUD
+  - MobilePlayer
+  - SDWebImage
+  - SwiftyJSON (= 3.1.4)
+
+SPEC CHECKSUMS:
+  JGProgressHUD: 63ad7d8850702a91625fb9ed8e94eab706c03d81
+  MobilePlayer: 069b13482499f14c25b6ce53f63a91e17975b073
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 341c2addbdd723a45f44cf45a97460510fd13873
+
+COCOAPODS: 1.4.0
