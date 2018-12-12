@@ -28,6 +28,9 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        UIApplication.shared.isStatusBarHidden = true;
+
         let logo = UIImage(named: "elstupid.png")
         let imageView = UIImageView(image: logo)
         imageView.contentMode = .scaleAspectFit
@@ -37,16 +40,12 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
       //self.hud.show(in:self.view)
 
   
-        super.viewDidLoad()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        hud = JGProgressHUD(style: JGProgressHUDStyle.dark)
-        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView.init(hudStyle: JGProgressHUDStyle.dark);
-        hud.textLabel.text = "Laster..";
-        self.hud.show(in:self.view)
+
               NetworkManager.sharedInstance.getItemByCode(codeScanned, onCompletion: itemFetched);
         //	UIApplication.shared.isStatusBarHidden = true;
         //self.slideMenuController()?.removeLeftGestures()
@@ -106,10 +105,7 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
     
     
     func itemFetched(json: JSON){
-        DispatchQueue.main.async {
-                 self.hud.dismiss()
-        }
-
+      
         let success = json["success"].bool;
         let data = json["data"];
         
@@ -125,9 +121,9 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
                        // print(description)
                         DispatchQueue.main.async() {
                             var awsVideo = AwsVideo(parameter: subJson)
-                            let tittel = data["logo"];
+                            let titte = data["logo"].rawString();
                             //if data["logo"].string != nil {awsVideo.logo = data["logo"].string  }
-                            
+                            awsVideo.logo = titte
                             self.assetArray.append(awsVideo)
                         }
                     }
@@ -190,7 +186,7 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.assetArray.count
+        return assetArray.count
     }
     
     

@@ -12,6 +12,13 @@ DEPENDENCIES:
   - SDWebImage
   - SwiftyJSON (= 3.1.4)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JGProgressHUD
+    - MobilePlayer
+    - SDWebImage
+    - SwiftyJSON
+
 SPEC CHECKSUMS:
   JGProgressHUD: 63ad7d8850702a91625fb9ed8e94eab706c03d81
   MobilePlayer: 069b13482499f14c25b6ce53f63a91e17975b073
@@ -20,4 +27,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 341c2addbdd723a45f44cf45a97460510fd13873
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

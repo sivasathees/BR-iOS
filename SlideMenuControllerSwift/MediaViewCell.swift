@@ -32,6 +32,18 @@ class CustomViewFlowLayout : UICollectionViewFlowLayout {
 }
 
 class MediaViewCell: UICollectionViewCell {
+    @IBOutlet weak var topConstraint: NSLayoutConstraint! {
+        didSet {
+            let deviceType = UIDevice().type
+            
+            if deviceType == .iPhoneX || deviceType == .iPhoneXS || deviceType == .iPhoneXSMax {
+                topConstraint.constant = 60.0
+            } else {
+                
+            }
+        }
+    }
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var lblPage: UILabel!
@@ -84,6 +96,8 @@ class MediaViewCell: UICollectionViewCell {
     func fillData(thumbUrl: AwsVideo, caseBoolean: Bool, caseUrlStr: String)  {
  
         self.imageView.sd_setImage(with: URL(string: thumbUrl.thumbnail), placeholderImage: UIImage(named: "placeholder.png"));
+        self.imgLogo.sd_setImage(with: URL(string: thumbUrl.logo), placeholderImage: UIImage(named: "placeholder.png"));
+
         if(caseBoolean == true){
             self.btnSettings.isHidden = false
         }
@@ -128,3 +142,5 @@ class MediaViewCell: UICollectionViewCell {
     }
     
 }
+
+

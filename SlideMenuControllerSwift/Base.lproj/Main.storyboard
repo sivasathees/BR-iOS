@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="I9w-x4-mAi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pwN-Wv-Ioh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -275,6 +274,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-Im-P7V">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5WZ-n3-paX">
                                     <size key="itemSize" width="375" height="667"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -312,7 +312,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJ2-jd-oSc">
-                                                    <rect key="frame" x="305" y="22" width="61" height="27"/>
+                                                    <rect key="frame" x="305" y="21.5" width="61" height="27"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="61" id="9JO-uG-u8g"/>
@@ -332,7 +332,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAZ-Di-zQL">
-                                                    <rect key="frame" x="168.5" y="26" width="39.5" height="19"/>
+                                                    <rect key="frame" x="168" y="25.5" width="39.5" height="19"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -343,11 +343,8 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-QD-1FX">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-QD-1FX">
                                                     <rect key="frame" x="10" y="527" width="355" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="ZC9-zQ-wr7"/>
-                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nod-H6-cIT">
                                                     <rect key="frame" x="15" y="607" width="287" height="20"/>
@@ -393,9 +390,9 @@
                                             <constraint firstItem="3zO-hl-86C" firstAttribute="leading" secondItem="3tI-d0-8K5" secondAttribute="leading" constant="15" id="5QF-7m-bFj"/>
                                             <constraint firstItem="2bu-UD-P7T" firstAttribute="top" secondItem="3tI-d0-8K5" secondAttribute="top" id="6X8-3Q-nTq"/>
                                             <constraint firstItem="2bu-UD-P7T" firstAttribute="leading" secondItem="3tI-d0-8K5" secondAttribute="leading" id="7CJ-nH-h7O"/>
+                                            <constraint firstItem="4wa-xb-vdL" firstAttribute="top" secondItem="3tI-d0-8K5" secondAttribute="top" constant="20" id="8EV-W8-BkS"/>
                                             <constraint firstItem="4wa-xb-vdL" firstAttribute="leading" secondItem="3tI-d0-8K5" secondAttribute="leading" constant="10" id="CEc-3X-DGg"/>
                                             <constraint firstAttribute="trailing" secondItem="e0g-QD-1FX" secondAttribute="trailing" constant="10" id="Cj8-Tn-P2v"/>
-                                            <constraint firstItem="4wa-xb-vdL" firstAttribute="top" secondItem="3tI-d0-8K5" secondAttribute="top" constant="20" id="Dsx-8F-6oe"/>
                                             <constraint firstAttribute="trailing" secondItem="eAN-sU-KFI" secondAttribute="trailing" constant="9" id="GHT-fY-KiW"/>
                                             <constraint firstItem="agp-RX-r7G" firstAttribute="leading" secondItem="nod-H6-cIT" secondAttribute="trailing" constant="8" id="H9S-m3-ZDC"/>
                                             <constraint firstItem="ftK-D2-SEs" firstAttribute="centerX" secondItem="3tI-d0-8K5" secondAttribute="centerX" id="PGT-YZ-ZPu"/>
@@ -429,6 +426,7 @@
                                             <outlet property="lblPage" destination="WAZ-Di-zQL" id="tWD-GZ-FCH"/>
                                             <outlet property="lblTitle" destination="nod-H6-cIT" id="ev6-Ou-QEW"/>
                                             <outlet property="playiconImage" destination="ftK-D2-SEs" id="6hP-tw-Lnz"/>
+                                            <outlet property="topConstraint" destination="8EV-W8-BkS" id="ED5-j3-Who"/>
                                             <outlet property="vwBottom" destination="tWf-mB-zkk" id="MC5-nw-E8h"/>
                                         </connections>
                                     </collectionViewCell>
@@ -439,7 +437,8 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.89411764709999997" green="0.91764705879999997" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vLg-Im-P7V" firstAttribute="top" secondItem="IWZ-ke-U66" secondAttribute="top" id="6kb-cL-Iyh"/>
                             <constraint firstAttribute="trailing" secondItem="vLg-Im-P7V" secondAttribute="trailing" id="CdK-3F-KpZ"/>
@@ -448,6 +447,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wve-YG-p0e"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="vLg-Im-P7V" id="u9z-8G-kZC"/>
                     </connections>
@@ -510,14 +510,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CardOverlay" width="1080" height="299"/>
-        <image name="camera" width="1108" height="1749"/>
-        <image name="ic_close" width="36" height="36"/>
+        <image name="CardOverlay" width="360" height="99.666664123535156"/>
+        <image name="camera" width="266" height="419.760009765625"/>
+        <image name="ic_close" width="72" height="72"/>
         <image name="ic_language" width="72" height="72"/>
-        <image name="ic_play" width="210" height="210"/>
+        <image name="ic_play" width="70" height="70"/>
         <image name="ic_qrcode" width="72" height="72"/>
-        <image name="ic_support" width="27" height="27"/>
-        <image name="menu-icon" width="2184" height="2000"/>
-        <image name="qrcode" width="122" height="122"/>
+        <image name="ic_support" width="21.639345169067383" height="21.639345169067383"/>
+        <image name="menu-icon" width="262.07998657226562" height="240"/>
+        <image name="qrcode" width="58.799999237060547" height="58.799999237060547"/>
     </resources>
 </document>

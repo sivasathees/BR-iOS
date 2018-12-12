@@ -144,7 +144,7 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "GoViewController") as! GoViewController
             newViewController.barcodeScanned(code!)
-            newViewController.qrViewController = self;
+            
             self.present(newViewController, animated: true, completion: nil)
             //delegatemenu?.changeViewController(LeftMenu.go)
             //delegatemenu?.barcodeScanned(code!)

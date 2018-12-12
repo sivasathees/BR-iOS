@@ -12,7 +12,6 @@
 		096D987D1F950B8300899A1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096D987C1F950B8300899A1A /* Images.xcassets */; };
 		098F57C61F8D313F006FA9E1 /* MediaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F57C51F8D313F006FA9E1 /* MediaViewCell.swift */; };
 		0E75C5A31BE3CA9F00844634 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA8AA51A43E2EF00863FB9 /* SlideMenuController.swift */; };
-		0E75C5A61BE3CAFE00844634 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E75C5A41BE3CAFE00844634 /* Info.plist */; };
 		0EB8EBFF1BE3CF3C00BC2A99 /* SlideMenuControllerSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E75C5A51BE3CAFE00844634 /* SlideMenuControllerSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A355F1E1FEF91CF008F8B30 /* UIApplication+Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A355F1D1FEF91CF008F8B30 /* UIApplication+Features.swift */; };
 		1A355F201FEF936D008F8B30 /* UIViewController+Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A355F1F1FEF936D008F8B30 /* UIViewController+Features.swift */; };
@@ -22,6 +21,7 @@
 		1A8372461FE5B0CB0085262E /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A8372431FE5B0C90085262E /* Roboto-Black.ttf */; };
 		1A88FBDA1FE87E2A0044472A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A88FBD91FE87E2A0044472A /* Launch Screen.storyboard */; };
 		1ACA45FC1FE32362006BFEF1 /* broadkazt_scalewddown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ACA45FB1FE32362006BFEF1 /* broadkazt_scalewddown.png */; };
+		84F2B37D21C1B3DA009AFEF9 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F2B37C21C1B3DA009AFEF9 /* Device.swift */; };
 		C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539E6461A315E87003B7CC7 /* AppDelegate.swift */; };
 		C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C539E6481A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld */; };
 		C539E64F1A315E87003B7CC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C539E64D1A315E87003B7CC7 /* Main.storyboard */; };
@@ -85,6 +85,7 @@
 		29FE67CCB0A6E08FC0FA6466 /* Pods_SlideMenuControllerSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideMenuControllerSwift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597F6A915E48E29C94279CF7 /* Pods-SlideMenuControllerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideMenuControllerSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideMenuControllerSwift/Pods-SlideMenuControllerSwift.release.xcconfig"; sourceTree = "<group>"; };
 		636F1350F0958D4BEC5088A0 /* Pods_Broadkazt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Broadkazt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F2B37C21C1B3DA009AFEF9 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		947F117C26F7B85A053942C9 /* Pods_SlideMenuControllerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideMenuControllerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C648E2559D31C726E04E58 /* Pods-Broadkazt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Broadkazt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Broadkazt/Pods-Broadkazt.debug.xcconfig"; sourceTree = "<group>"; };
 		C539E6411A315E87003B7CC7 /* Broadkazt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Broadkazt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +183,7 @@
 			children = (
 				1A355F1D1FEF91CF008F8B30 /* UIApplication+Features.swift */,
 				1A355F1F1FEF936D008F8B30 /* UIViewController+Features.swift */,
+				84F2B37C21C1B3DA009AFEF9 /* Device.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -357,7 +359,6 @@
 				C539E63E1A315E87003B7CC7 /* Frameworks */,
 				C539E63F1A315E87003B7CC7 /* Resources */,
 				B5821DE7800523C015D362AC /* [CP] Embed Pods Frameworks */,
-				0F32A2F8C94159E8A62E0C5A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,7 +450,6 @@
 				C5498C801BE897660076A7C5 /* ImageHeaderView.xib in Resources */,
 				C5BF6A841BEEF1E70064C18E /* DataTableViewCell.xib in Resources */,
 				096D987D1F950B8300899A1A /* Images.xcassets in Resources */,
-				0E75C5A61BE3CAFE00844634 /* Info.plist in Resources */,
 				1A8372451FE5B0CB0085262E /* Roboto-Bold.ttf in Resources */,
 				1A88FBDA1FE87E2A0044472A /* Launch Screen.storyboard in Resources */,
 				C539E64F1A315E87003B7CC7 /* Main.storyboard in Resources */,
@@ -468,21 +468,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F32A2F8C94159E8A62E0C5A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Broadkazt/Pods-Broadkazt-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		16DBC29E13461E79B2F7AA0D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,6 +544,7 @@
 				C5F179CE1BEB2A5900EEDD9A /* UIImage.swift in Sources */,
 				C5498C821BE8994F0076A7C5 /* UIImageView.swift in Sources */,
 				C5C1CE5B1A70DADF00B6E411 /* NonMenuController.swift in Sources */,
+				84F2B37D21C1B3DA009AFEF9 /* Device.swift in Sources */,
 				C5498C7E1BE897250076A7C5 /* ImageHeaderView.swift in Sources */,
 				C5BD39DC1A6CD15700D0AF95 /* LanguageViewController.swift in Sources */,
 				C5BA8AA61A43E2EF00863FB9 /* SlideMenuController.swift in Sources */,
