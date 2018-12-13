@@ -272,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-Im-P7V">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-44" width="375" height="711"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5WZ-n3-paX">
@@ -283,7 +283,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="MediaViewCell" id="3tI-d0-8K5" customClass="MediaViewCell" customModule="Broadkazt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="22" width="375" height="667"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -312,7 +312,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJ2-jd-oSc">
-                                                    <rect key="frame" x="305" y="21.5" width="61" height="27"/>
+                                                    <rect key="frame" x="305" y="65.5" width="61" height="27"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="61" id="9JO-uG-u8g"/>
@@ -320,7 +320,7 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wa-xb-vdL">
-                                                    <rect key="frame" x="10" y="20" width="30" height="30"/>
+                                                    <rect key="frame" x="10" y="64" width="30" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="YeE-JP-qhN"/>
@@ -332,13 +332,13 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAZ-Di-zQL">
-                                                    <rect key="frame" x="168" y="25.5" width="39.5" height="19"/>
+                                                    <rect key="frame" x="168" y="69.5" width="39.5" height="19"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAN-sU-KFI">
-                                                    <rect key="frame" x="305" y="21.5" width="61" height="27"/>
+                                                    <rect key="frame" x="305" y="65.5" width="61" height="27"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -390,7 +390,7 @@
                                             <constraint firstItem="3zO-hl-86C" firstAttribute="leading" secondItem="3tI-d0-8K5" secondAttribute="leading" constant="15" id="5QF-7m-bFj"/>
                                             <constraint firstItem="2bu-UD-P7T" firstAttribute="top" secondItem="3tI-d0-8K5" secondAttribute="top" id="6X8-3Q-nTq"/>
                                             <constraint firstItem="2bu-UD-P7T" firstAttribute="leading" secondItem="3tI-d0-8K5" secondAttribute="leading" id="7CJ-nH-h7O"/>
-                                            <constraint firstItem="4wa-xb-vdL" firstAttribute="top" secondItem="3tI-d0-8K5" secondAttribute="top" constant="20" id="8EV-W8-BkS"/>
+                                            <constraint firstItem="4wa-xb-vdL" firstAttribute="top" secondItem="3tI-d0-8K5" secondAttribute="top" constant="64" id="8EV-W8-BkS"/>
                                             <constraint firstItem="4wa-xb-vdL" firstAttribute="leading" secondItem="3tI-d0-8K5" secondAttribute="leading" constant="10" id="CEc-3X-DGg"/>
                                             <constraint firstAttribute="trailing" secondItem="e0g-QD-1FX" secondAttribute="trailing" constant="10" id="Cj8-Tn-P2v"/>
                                             <constraint firstAttribute="trailing" secondItem="eAN-sU-KFI" secondAttribute="trailing" constant="9" id="GHT-fY-KiW"/>
@@ -440,7 +440,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vLg-Im-P7V" firstAttribute="top" secondItem="IWZ-ke-U66" secondAttribute="top" id="6kb-cL-Iyh"/>
+                            <constraint firstItem="vLg-Im-P7V" firstAttribute="top" secondItem="IWZ-ke-U66" secondAttribute="top" constant="-44" id="6kb-cL-Iyh"/>
                             <constraint firstAttribute="trailing" secondItem="vLg-Im-P7V" secondAttribute="trailing" id="CdK-3F-KpZ"/>
                             <constraint firstItem="vLg-Im-P7V" firstAttribute="leading" secondItem="IWZ-ke-U66" secondAttribute="leading" id="XkM-7e-Sug"/>
                             <constraint firstItem="4w6-Ph-vE3" firstAttribute="top" secondItem="vLg-Im-P7V" secondAttribute="bottom" id="oC3-52-OC5"/>

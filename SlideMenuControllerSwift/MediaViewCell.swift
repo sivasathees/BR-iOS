@@ -37,7 +37,7 @@ class MediaViewCell: UICollectionViewCell {
             let deviceType = UIDevice().type
             
             if deviceType == .iPhoneX || deviceType == .iPhoneXS || deviceType == .iPhoneXSMax {
-                topConstraint.constant = 60.0
+                topConstraint.constant = 94.0
             } else {
                 
             }
