@@ -196,7 +196,7 @@
 /* Begin PBXFileReference section */
 		010C6C562B9C667F6E0307487914A21C /* MobilePlayerNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MobilePlayerNotification.swift; path = MobilePlayer/MobilePlayerNotification.swift; sourceTree = "<group>"; };
 		019D16CA64BFDE6014E0E7674831D92C /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
-		01A22BCD3FE6A969884EE30E127A04CC /* JGProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JGProgressHUD.framework; path = JGProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01A22BCD3FE6A969884EE30E127A04CC /* JGProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JGProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		020988723A3237794230EA174FFE4887 /* JGProgressHUDRingIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDRingIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDRingIndicatorView.m; sourceTree = "<group>"; };
 		049458949B9CB4722067D5534A825794 /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
 		058FD1E316501566504618EC04BEA232 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		42698EB1695FFFD60A9FBE9DDBA88807 /* ElementConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementConfig.swift; path = MobilePlayer/Config/ElementConfig.swift; sourceTree = "<group>"; };
 		467CAD0588338D393F258FE5C228FA5E /* SDWebImageGIFCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageGIFCoder.m; path = SDWebImage/SDWebImageGIFCoder.m; sourceTree = "<group>"; };
 		4A29E0DCBDEB9B19B1EB3D261B1DF808 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
-		4C3CA3A3F673D5921E51D68C5110D105 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C3CA3A3F673D5921E51D68C5110D105 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C77294B7AB43C78A17592CC1636BAF1 /* SliderConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderConfig.swift; path = MobilePlayer/Config/SliderConfig.swift; sourceTree = "<group>"; };
 		5388A216D75C27177B28E03A6CEFE602 /* JGProgressHUDImageIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDImageIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDImageIndicatorView.m; sourceTree = "<group>"; };
 		55347997A3BAFA7B09109155A8BFFC22 /* MLPlayButton@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "MLPlayButton@3x.png"; path = "MobilePlayer/Resources/MLPlayButton@3x.png"; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 		62DC243511DDD15CA217E00F4DFB5926 /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/UIImage+GIF.h"; sourceTree = "<group>"; };
 		647DE646A15AE446B0E0792CDFAF08BE /* JGProgressHUDShadow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDShadow.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDShadow.m; sourceTree = "<group>"; };
 		651C9B86951BF701A966BF0363EA821F /* JGProgressHUDImageIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDImageIndicatorView.h; path = JGProgressHUD/JGProgressHUD/JGProgressHUDImageIndicatorView.h; sourceTree = "<group>"; };
-		6A9BA8C353095FB24684855CFE88FE1E /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A9BA8C353095FB24684855CFE88FE1E /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6801ABD961240A146CB47F8B9C9E2E /* UIImage+ForceDecode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ForceDecode.m"; path = "SDWebImage/UIImage+ForceDecode.m"; sourceTree = "<group>"; };
 		70562A86060E1ED31506D847EA5977B0 /* MobilePlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MobilePlayer-dummy.m"; sourceTree = "<group>"; };
 		708CD37E44E7BFA0226FDAED2AF5366A /* JGProgressHUDErrorIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDErrorIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDErrorIndicatorView.m; sourceTree = "<group>"; };
@@ -286,7 +286,7 @@
 		8D34944ED9DC26975F28DF9F0A3B6726 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
 		9076D8085C59CCF8E047BCE52CC694A6 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
 		93A3D75359F989F5BE1FD8FF6F782B88 /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95BEC3DF7FC2E60608EBEC3238BA07B2 /* SDWebImageImageIOCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageImageIOCoder.m; path = SDWebImage/SDWebImageImageIOCoder.m; sourceTree = "<group>"; };
 		977C73DD7C6A655E5CB3A963C528F792 /* Pods-Broadkazt-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Broadkazt-resources.sh"; sourceTree = "<group>"; };
 		981FC39813758F0B95E9101084418F84 /* JGProgressHUDRingIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDRingIndicatorView.h; path = JGProgressHUD/JGProgressHUD/JGProgressHUDRingIndicatorView.h; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 		9A6D3D98B69A396A460F87A0E70B3C6B /* MLReduceVolume.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MLReduceVolume.png; path = MobilePlayer/Resources/MLReduceVolume.png; sourceTree = "<group>"; };
 		9A83C1BB5597BC9D12BFA1EF095D53BE /* SDImageCacheConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheConfig.h; path = SDWebImage/SDImageCacheConfig.h; sourceTree = "<group>"; };
 		9A9DAB0DA50C3392CC498C4008A5CDA3 /* Label.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Label.swift; path = MobilePlayer/Views/Label.swift; sourceTree = "<group>"; };
-		9AC4160B0A221A8368E3FC9DCD900227 /* MobilePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MobilePlayer.framework; path = MobilePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AC4160B0A221A8368E3FC9DCD900227 /* MobilePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MobilePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF2306BB211224C36DCE452353A7EDF /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
 		9F5817E3DD5365E272577D3050FDD81C /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
 		A09BB5CC4D43C4102587DF99322269B2 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
@@ -311,7 +311,7 @@
 		AA72590F972C890C3525AF13617EF07C /* MobilePlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MobilePlayer.xcconfig; sourceTree = "<group>"; };
 		AB87FFBD178C020A8F1FB51E5B71B43F /* JGProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUD.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUD.m; sourceTree = "<group>"; };
 		AC9E690D4E6A5C89EB022F12CAE1036D /* ClosureSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureSupport.swift; path = MobilePlayer/Extensions/ClosureSupport.swift; sourceTree = "<group>"; };
-		ADFDAD0F99C0E185787D52ABA73C1A09 /* Pods_Broadkazt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Broadkazt.framework; path = "Pods-Broadkazt.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFDAD0F99C0E185787D52ABA73C1A09 /* Pods_Broadkazt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Broadkazt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE39C2952658F09E420469EF21E5F504 /* SDWebImageCoderHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCoderHelper.h; path = SDWebImage/SDWebImageCoderHelper.h; sourceTree = "<group>"; };
 		B057C0A9F405B180BB89E409445A1477 /* VolumeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VolumeView.swift; path = MobilePlayer/Views/VolumeView.swift; sourceTree = "<group>"; };
 		B0E1767191F89728139CC0247C129177 /* SDWebImageCodersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCodersManager.m; path = SDWebImage/SDWebImageCodersManager.m; sourceTree = "<group>"; };
@@ -337,7 +337,7 @@
 		D6EFD4DC30AD01067D8B42913E5FB2FA /* SDWebImageCodersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCodersManager.h; path = SDWebImage/SDWebImageCodersManager.h; sourceTree = "<group>"; };
 		D705F33CABA2981799D40805017CB25F /* MobilePlayerControlsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MobilePlayerControlsView.swift; path = MobilePlayer/Views/MobilePlayerControlsView.swift; sourceTree = "<group>"; };
 		D974525EF0E167A31540222146C41F97 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
-		DC7C856F438120F65BEDED49C6EDF3A8 /* MobilePlayer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MobilePlayer.bundle; path = "MobilePlayer-MobilePlayer.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC7C856F438120F65BEDED49C6EDF3A8 /* MobilePlayer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobilePlayer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD853B6378BC7040F607B01778B6AEF4 /* SDWebImageFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageFrame.m; path = SDWebImage/SDWebImageFrame.m; sourceTree = "<group>"; };
 		DDA81EDC8D30E549A476E0E715190205 /* MLIncreaseVolume.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = MLIncreaseVolume.png; path = MobilePlayer/Resources/MLIncreaseVolume.png; sourceTree = "<group>"; };
 		E2C38CF75D82C0BC8209DB64F5E42631 /* JGProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JGProgressHUD-dummy.m"; sourceTree = "<group>"; };
@@ -430,7 +430,6 @@
 				0666C4C22717A416BE5339774FAE47F3 /* SwiftyJSON.swift */,
 				34AB60C751063255855D77556E6EFD30 /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -488,7 +487,6 @@
 				BF9105B44926687C76A6B26CE2D74350 /* Core */,
 				BECAC853DD6586595846D152D551CBA7 /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -597,7 +595,6 @@
 				99A1DF23632B33EFB4BF67439B3F64A5 /* Resources */,
 				40F31A8891DF41C053560702F1064D60 /* Support Files */,
 			);
-			name = MobilePlayer;
 			path = MobilePlayer;
 			sourceTree = "<group>";
 		};
@@ -700,7 +697,6 @@
 				A1EFCE7999096729D37BE7B5682E5D2B /* Resources */,
 				72201DA06EAB1471C8EC97D5E2364099 /* Support Files */,
 			);
-			name = JGProgressHUD;
 			path = JGProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -946,7 +942,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1642,6 +1638,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

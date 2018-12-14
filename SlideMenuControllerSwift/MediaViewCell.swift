@@ -10,7 +10,6 @@ import UIKit
 import Photos
 import SDWebImage
 
-
 class CustomViewFlowLayout : UICollectionViewFlowLayout {
     
     let cellSpacing:CGFloat = 0
@@ -32,29 +31,21 @@ class CustomViewFlowLayout : UICollectionViewFlowLayout {
 }
 
 class MediaViewCell: UICollectionViewCell {
-    @IBOutlet weak var topConstraint: NSLayoutConstraint! {
-        didSet {
-            let deviceType = UIDevice().type
-            
-            if deviceType == .iPhoneX || deviceType == .iPhoneXS || deviceType == .iPhoneXSMax {
-                topConstraint.constant = 60.0
-            } else {
-                
-            }
-        }
-    }
+    
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var lblPage: UILabel!
     @IBOutlet weak var lblDuration: UILabel!
-    @IBOutlet weak var vwBottom: UIView!
     
     @IBOutlet weak var btnSettings: UIButton!
     @IBOutlet weak var bgSeconds: UIView!
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var constrainImageHeight: NSLayoutConstraint!
     
     var gradientLayer: CAGradientLayer? = nil
     
@@ -72,6 +63,21 @@ class MediaViewCell: UICollectionViewCell {
                 deselect();
             }
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if #available(iOS 11.0, *) {
+            if let window = UIApplication.shared.keyWindow{
+
+                let topPadding = window.safeAreaInsets.top
+                let bottomPadding = window.safeAreaInsets.bottom
+                self.topConstraint.constant = topPadding+20
+                self.bottomConstraint.constant = bottomPadding+20
+            }
+        }
+       
     }
     
     @IBAction func btnCloseTapped(_ sender: Any) {
@@ -95,8 +101,23 @@ class MediaViewCell: UICollectionViewCell {
     
     func fillData(thumbUrl: AwsVideo, caseBoolean: Bool, caseUrlStr: String)  {
  
-        self.imageView.sd_setImage(with: URL(string: thumbUrl.thumbnail), placeholderImage: UIImage(named: "placeholder.png"));
-        self.imgLogo.sd_setImage(with: URL(string: thumbUrl.logo), placeholderImage: UIImage(named: "placeholder.png"));
+        let placeHolder =  UIImage(named: "placeholder.png")
+        self.imageView.sd_setImage(with: URL(string: thumbUrl.thumbnail), placeholderImage:placeHolder);
+//        self.imgLogo.sd_setImage(with: URL(string: thumbUrl.logo), placeholderImage:placeHolder);
+        
+        self.imgLogo.sd_setImage(with:  URL(string:thumbUrl.logo)) { (image, error, cache, url) in
+            
+            if let image = image{
+                
+                self.imgLogo.image = image
+                let height = self.imgLogo.frame.width/(image.size.width/image.size.height)
+                self.constrainImageHeight.constant = height
+                
+                self.imgLogo.layoutIfNeeded()
+            }else{
+                self.imgLogo.image = placeHolder
+            }
+        }
 
         if(caseBoolean == true){
             self.btnSettings.isHidden = false
@@ -129,16 +150,17 @@ class MediaViewCell: UICollectionViewCell {
     }
     
     func createGradientLayer() {
-        gradientLayer = CAGradientLayer()
+      
+        self.gradientLayer = CAGradientLayer()
+        let topColor: CGColor = UIColor.black.withAlphaComponent(0).cgColor
         
-        var frame = self.vwBottom.frame
-        frame.size.width = UIScreen.main.bounds.size.width
-        gradientLayer?.frame = frame
+        let bottomColor: CGColor = UIColor.black.withAlphaComponent(0.99).cgColor
         
-        let startColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.4)
-        let endColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        gradientLayer?.colors = [startColor.cgColor, endColor.cgColor]
-        self.vwBottom.layer.addSublayer(gradientLayer!)
+        gradientLayer!.colors = [topColor, bottomColor]
+        gradientLayer!.locations = [0.5,1.0]
+        
+        gradientLayer!.frame = self.bounds
+        self.imageView.layer.insertSublayer(gradientLayer!, at: 0)
     }
     
 }

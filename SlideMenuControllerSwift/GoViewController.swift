@@ -116,11 +116,11 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
                 if(caseBool == true){
                     caseUrl = data["asset"]["caseUrl"].string!
                 }
-                for (key, subJson) in data["videos"] {
-                    if let description = subJson["thumbnail"].string {
+                for (_, subJson) in data["videos"] {
+                    if subJson["thumbnail"].string != nil {
                        // print(description)
                         DispatchQueue.main.async() {
-                            var awsVideo = AwsVideo(parameter: subJson)
+                            let awsVideo = AwsVideo(parameter: subJson)
                             let titte = data["logo"].rawString();
                             //if data["logo"].string != nil {awsVideo.logo = data["logo"].string  }
                             awsVideo.logo = titte
@@ -190,19 +190,6 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
     }
     
     
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! MediaViewCell
-        cell.lblPage.text = String(format: "%ld of %ld", indexPath.row + 1,assetArray.count)
-        cell.bgSeconds.layer.cornerRadius = 5.0
-        let phasset = assetArray[indexPath.row]
-        cell.fillData(thumbUrl: phasset,caseBoolean: caseBool,caseUrlStr: caseUrl)
-        cell.playiconImage.tag = indexPath.row
-        return cell
-    }
-    
-    
-    @available(iOS 6.0, *)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! MediaViewCell
         cell.lblPage.text = String(format: "%ld of %ld", indexPath.row + 1,assetArray.count)
