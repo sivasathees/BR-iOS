@@ -272,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-Im-P7V">
-                                <rect key="frame" x="0.0" y="-44" width="375" height="711"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5WZ-n3-paX">
@@ -283,7 +283,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="MediaViewCell" id="3tI-d0-8K5" customClass="MediaViewCell" customModule="Broadkazt" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -313,7 +313,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAZ-Di-zQL">
-                                                    <rect key="frame" x="167.5" y="25.5" width="40" height="19"/>
+                                                    <rect key="frame" x="167.5" y="69.5" width="40" height="19"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -425,7 +425,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vLg-Im-P7V" firstAttribute="top" secondItem="IWZ-ke-U66" secondAttribute="top" constant="-44" id="6kb-cL-Iyh"/>
+                            <constraint firstItem="vLg-Im-P7V" firstAttribute="top" secondItem="IWZ-ke-U66" secondAttribute="top" id="6kb-cL-Iyh"/>
                             <constraint firstAttribute="trailing" secondItem="vLg-Im-P7V" secondAttribute="trailing" id="CdK-3F-KpZ"/>
                             <constraint firstItem="vLg-Im-P7V" firstAttribute="leading" secondItem="IWZ-ke-U66" secondAttribute="leading" id="XkM-7e-Sug"/>
                             <constraint firstItem="4w6-Ph-vE3" firstAttribute="top" secondItem="vLg-Im-P7V" secondAttribute="bottom" id="oC3-52-OC5"/>
