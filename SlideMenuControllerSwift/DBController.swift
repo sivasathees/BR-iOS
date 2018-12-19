@@ -18,13 +18,15 @@ public struct History{
     let code:String
     let dateString:String
     let title:String
+    var image:String?
     
-    init(code:String,dateString:String,date:Date,title:String) {
+    init(code:String,dateString:String,date:Date,title:String,image:String?) {
         
         self.date  = date
         self.code = code
         self.dateString = dateString
         self.title = title
+        self.image = image
     }
     
 }
@@ -77,7 +79,7 @@ public final class DBController{
         }
     }
     
-    public class func addHistory(with code:String,title:String){
+    public class func addHistory(with code:String,title:String,image:String?){
         
         self.removeHistory(with: code)
         
@@ -85,7 +87,7 @@ public final class DBController{
         newData.setValue(code, forKey: "code")
         newData.setValue(Date(), forKey: "date")
         newData.setValue(title, forKey: "title")
-        
+        newData.setValue(image, forKey: "image")
         do{
             try DBController.shared.context.save()
             
@@ -107,6 +109,7 @@ public final class DBController{
             let code = id.value(forKey: "code") as? String
             let date = id.value(forKey: "date") as? Date
             let title = id.value(forKey: "title") as? String ?? "Unknown"
+            let image = id.value(forKey: "image") as? String
             
             if let c = code{
                 
@@ -118,7 +121,7 @@ public final class DBController{
                     formatter.dateFormat = "yyyy-MM-dd HH:mm"
                     let dateString = formatter.string(from: d)
                     
-                    let history = History(code: c, dateString: dateString, date: d, title: title)
+                    let history = History(code: c, dateString: dateString, date: d, title: title,image:image)
                     histories.append(history)
                 }
             }

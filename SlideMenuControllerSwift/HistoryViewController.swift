@@ -11,6 +11,26 @@
 
 import UIKit
 import SVProgressHUD
+import SDWebImage
+
+class CellHistory:UITableViewCell{
+    
+    @IBOutlet weak var imageViewThump: UIImageView!
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelDate: UILabel!
+    
+    
+    func configure(history:History){
+        
+        
+        self.imageViewThump.sd_setImage(with: URL(string: history.image ?? ""), placeholderImage:UIImage(named: "ic_launcher"), options: .highPriority, completed: nil)
+        
+        self.labelDate.text = history.dateString
+        self.labelTitle.text = history.title
+        
+    }
+    
+}
 
 class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
@@ -21,6 +41,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.tableFooterView = UIView()
     }
     
     @IBAction func actionClearAllHistory(_ sender: UIBarButtonItem) {
@@ -56,10 +77,9 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CellHistory
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = self.histories[indexPath.row].title
-        cell.detailTextLabel?.text = self.histories[indexPath.row].dateString
+        cell.configure(history: self.histories[indexPath.row])
         return cell
     }
  

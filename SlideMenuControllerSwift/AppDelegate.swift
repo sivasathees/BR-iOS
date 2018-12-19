@@ -31,15 +31,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
     }
     
-    func openCameraVC(){
-        
-        self.createMenuView()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "QrViewController") as! QrViewController
-        self.window?.rootViewController = mainViewController
-        self.window?.makeKeyAndVisible()
-    }
+//    func openCameraVC(){
+//        
+////        self.createMenuView()
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        
+//        let mainViewController = storyboard.instantiateViewController(withIdentifier: "QrViewController") as! QrViewController
+//        self.window?.rootViewController = mainViewController
+//        self.window?.makeKeyAndVisible()
+//    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        self.reach = InternetManager.reachabilityForInternetConnection()

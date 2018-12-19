@@ -144,8 +144,10 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
             
         }
         
-        if let title = self.assetArray.first?.videoName{
-            DBController.addHistory(with: self.codeScanned, title:title )
+        if let v = self.assetArray.first{
+            
+            print("thumpnail is:",v.thumbnail)
+            DBController.addHistory(with: self.codeScanned, title:v.videoName,image: v.thumbnail)
         }
         
         DispatchQueue.main.async() {

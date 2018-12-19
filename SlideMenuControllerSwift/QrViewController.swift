@@ -36,12 +36,12 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(noInternet), name: NSNotification.Name(rawValue: "noInternet"), object: nil)
         
         
-        let navigationItem = UINavigationItem(title: "Title")
+//        let navigationItem = UINavigationItem(title: "Title")
         let logo = UIImage(named: "elstupid.png")
         let imageView = UIImageView(image: logo)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView;
-        Navbar.items?.append(navigationItem)
+//        Navbar.items?.append(navigationItem)
         self.setupCamera()
 //        delegatemenu?.changeViewController(LeftMenu.go)
 //        delegatemenu?.barcodeScanned("BR1995N")

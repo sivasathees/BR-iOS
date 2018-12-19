@@ -3,12 +3,13 @@
     <entity name="HistoryBase" representedClassName="HistoryBase" syncable="YES" codeGenerationType="class">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="HistoryBase"/>
         </fetchedProperty>
     </entity>
     <elements>
-        <element name="HistoryBase" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="HistoryBase" positionX="-63" positionY="-18" width="128" height="134"/>
     </elements>
 </model>

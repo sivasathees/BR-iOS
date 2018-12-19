@@ -17,7 +17,14 @@ class TutorialViewController: UIViewController {
 
     private var histories = [History]()
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let logo = UIImage(named: "elstupid.png")
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView;
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "HistoryViewController"{
@@ -30,8 +37,10 @@ class TutorialViewController: UIViewController {
     @IBAction func actionButton(_ sender: Any) {
         
         if self.completion == nil{
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.openCameraVC()
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            appDelegate.openCameraVC()
+            
+            self.performSegue(withIdentifier: "QrViewController", sender: self)
         }else{
             
             self.presentingViewController?.dismiss(animated: true, completion: {
