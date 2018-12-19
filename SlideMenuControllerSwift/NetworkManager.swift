@@ -20,6 +20,7 @@ class NetworkManager: NSObject {
     func getItemByCode(_ itemId: String, onCompletion: @escaping (JSON) -> Void) {
         let route =  baseUrl + "/api/account/" + itemId;
         makeHTTPGetRequest(route, onCompletion: { json, err in
+            
             onCompletion(json as JSON)
         })
     }
@@ -27,7 +28,13 @@ class NetworkManager: NSObject {
     
     
     fileprivate func makeHTTPGetRequest(_ path: String, onCompletion: @escaping ServiceResponse) {
-        let request = NSMutableURLRequest(url: NSURL(string: path)! as URL)
+        
+        guard let url = URL(string: path) else{
+            onCompletion(JSON(), NSError(domain: "Invalid URL", code: 1234, userInfo: nil))
+            return
+        }
+        
+        let request = NSMutableURLRequest(url: url)
         let session = URLSession.shared
         let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
             if let jsonData = data {

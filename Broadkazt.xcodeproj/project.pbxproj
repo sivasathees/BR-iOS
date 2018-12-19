@@ -13,6 +13,10 @@
 		098F57C61F8D313F006FA9E1 /* MediaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098F57C51F8D313F006FA9E1 /* MediaViewCell.swift */; };
 		0E75C5A31BE3CA9F00844634 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA8AA51A43E2EF00863FB9 /* SlideMenuController.swift */; };
 		0EB8EBFF1BE3CF3C00BC2A99 /* SlideMenuControllerSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E75C5A51BE3CAFE00844634 /* SlideMenuControllerSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		181DE7FD21CA518000168C74 /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 181DE7FB21CA518000168C74 /* db.xcdatamodeld */; };
+		181DE7FF21CA526600168C74 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DE7FE21CA526600168C74 /* HistoryViewController.swift */; };
+		181DE80121CA5BAC00168C74 /* DBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DE80021CA5BAC00168C74 /* DBController.swift */; };
+		183B77A321C7B14F00D93E15 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B77A221C7B14F00D93E15 /* TutorialViewController.swift */; };
 		1A355F1E1FEF91CF008F8B30 /* UIApplication+Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A355F1D1FEF91CF008F8B30 /* UIApplication+Features.swift */; };
 		1A355F201FEF936D008F8B30 /* UIViewController+Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A355F1F1FEF936D008F8B30 /* UIViewController+Features.swift */; };
 		1A79A54E1FEBF375006344D2 /* InternetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A79A54D1FEBF375006344D2 /* InternetManager.m */; };
@@ -69,6 +73,10 @@
 		0E75C5961BE3CA7900844634 /* Broadkazt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Broadkazt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E75C5A41BE3CAFE00844634 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Info.plist; sourceTree = "<group>"; };
 		0E75C5A51BE3CAFE00844634 /* SlideMenuControllerSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideMenuControllerSwift.h; path = Source/SlideMenuControllerSwift.h; sourceTree = "<group>"; };
+		181DE7FC21CA518000168C74 /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
+		181DE7FE21CA526600168C74 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		181DE80021CA5BAC00168C74 /* DBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBController.swift; sourceTree = "<group>"; };
+		183B77A221C7B14F00D93E15 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		1A355F1D1FEF91CF008F8B30 /* UIApplication+Features.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Features.swift"; sourceTree = "<group>"; };
 		1A355F1F1FEF936D008F8B30 /* UIViewController+Features.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Features.swift"; sourceTree = "<group>"; };
 		1A72AAA11FF18D940000AB7C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -178,6 +186,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		181DE7FA21CA517200168C74 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				181DE7FB21CA518000168C74 /* db.xcdatamodeld */,
+				181DE80021CA5BAC00168C74 /* DBController.swift */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		1A355F1C1FEF91A5008F8B30 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +254,7 @@
 		C539E6431A315E87003B7CC7 /* SlideMenuControllerSwift */ = {
 			isa = PBXGroup;
 			children = (
+				181DE7FA21CA517200168C74 /* Database */,
 				1A355F1C1FEF91A5008F8B30 /* Extensions */,
 				095EC7881F7C0EDA0030F4AB /* Common */,
 				C539E6461A315E87003B7CC7 /* AppDelegate.swift */,
@@ -304,6 +322,8 @@
 				C5C1CE5A1A70DADF00B6E411 /* NonMenuController.swift */,
 				C539E64D1A315E87003B7CC7 /* Main.storyboard */,
 				C5BF6A8B1BF340020064C18E /* ExSlideMenuController.swift */,
+				183B77A221C7B14F00D93E15 /* TutorialViewController.swift */,
+				181DE7FE21CA526600168C74 /* HistoryViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -492,10 +512,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Broadkazt/Pods-Broadkazt-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Broadkazt/Pods-Broadkazt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MobilePlayer/MobilePlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -503,11 +524,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobilePlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Broadkazt/Pods-Broadkazt-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Broadkazt/Pods-Broadkazt-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -526,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5BF6A8E1BF34A8B0064C18E /* UIApplication.swift in Sources */,
+				181DE7FF21CA526600168C74 /* HistoryViewController.swift in Sources */,
 				098F57C61F8D313F006FA9E1 /* MediaViewCell.swift in Sources */,
 				1A355F201FEF936D008F8B30 /* UIViewController+Features.swift in Sources */,
 				C5BD39DE1A6CD17B00D0AF95 /* GoViewController.swift in Sources */,
@@ -541,11 +564,13 @@
 				C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */,
 				C5F179D21BEB2FAF00EEDD9A /* UIColor.swift in Sources */,
 				095EC78A1F7C0EF10030F4AB /* NetworkManager.swift in Sources */,
+				183B77A321C7B14F00D93E15 /* TutorialViewController.swift in Sources */,
 				C5F179CE1BEB2A5900EEDD9A /* UIImage.swift in Sources */,
 				C5498C821BE8994F0076A7C5 /* UIImageView.swift in Sources */,
 				C5C1CE5B1A70DADF00B6E411 /* NonMenuController.swift in Sources */,
 				84F2B37D21C1B3DA009AFEF9 /* Device.swift in Sources */,
 				C5498C7E1BE897250076A7C5 /* ImageHeaderView.swift in Sources */,
+				181DE80121CA5BAC00168C74 /* DBController.swift in Sources */,
 				C5BD39DC1A6CD15700D0AF95 /* LanguageViewController.swift in Sources */,
 				C5BA8AA61A43E2EF00863FB9 /* SlideMenuController.swift in Sources */,
 				C539E66E1A316F5F003B7CC7 /* RightViewController.swift in Sources */,
@@ -553,6 +578,7 @@
 				0923B17B1F8D52F5008DBE86 /* AwsVideo.swift in Sources */,
 				C5F179D01BEB2CB500EEDD9A /* UIView.swift in Sources */,
 				C5BD39DA1A6CD12300D0AF95 /* QrViewController.swift in Sources */,
+				181DE7FD21CA518000168C74 /* db.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +909,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		181DE7FB21CA518000168C74 /* db.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				181DE7FC21CA518000168C74 /* db.xcdatamodel */,
+			);
+			currentVersion = 181DE7FC21CA518000168C74 /* db.xcdatamodel */;
+			path = db.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		C539E6481A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

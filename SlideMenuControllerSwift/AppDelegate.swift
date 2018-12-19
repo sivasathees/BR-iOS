@@ -2,6 +2,7 @@
 
 import UIKit
 import CoreData
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,14 +31,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-       self.reach = InternetManager.reachabilityForInternetConnection()
-      //  self.createMenuView()
+    func openCameraVC(){
+        
+        self.createMenuView()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "QrViewController") as! QrViewController
         self.window?.rootViewController = mainViewController
         self.window?.makeKeyAndVisible()
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+       self.reach = InternetManager.reachabilityForInternetConnection()
+
+        
+        SVProgressHUD.setBackgroundColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+        SVProgressHUD.setForegroundColor(#colorLiteral(red: 0.9990391135, green: 0.8814557195, blue: 0.01059619244, alpha: 1))
+        SVProgressHUD.setDefaultMaskType(.gradient)
+        
         UINavigationBar.appearance().isTranslucent = false
         
         UINavigationBar.appearance().tintColor = UIColor(hex: "1B53AF")

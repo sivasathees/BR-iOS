@@ -21,6 +21,8 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
     var timer : Timer!
     var timerCount: NSInteger = 0
     var codeScanned : String = ""
+    var itemFetchedJSON:JSON!
+    
     var webV : UIWebView!;
     var qrViewController: UIViewController!
     @IBOutlet weak var btnClose: UIButton!
@@ -45,8 +47,9 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.itemFetched(json: self.itemFetchedJSON)
 
-              NetworkManager.sharedInstance.getItemByCode(codeScanned, onCompletion: itemFetched);
         //	UIApplication.shared.isStatusBarHidden = true;
         //self.slideMenuController()?.removeLeftGestures()
         
@@ -54,6 +57,7 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
     }
     
     func barcodeScanned(_ itemId: String) {
+        
         codeScanned = itemId
         
     }
@@ -119,25 +123,29 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
                 for (_, subJson) in data["videos"] {
                     if subJson["thumbnail"].string != nil {
                        // print(description)
-                        DispatchQueue.main.async() {
-                            let awsVideo = AwsVideo(parameter: subJson)
-                            let titte = data["logo"].rawString();
-                            //if data["logo"].string != nil {awsVideo.logo = data["logo"].string  }
-                            awsVideo.logo = titte
-                            self.assetArray.append(awsVideo)
-                        }
+                        let awsVideo = AwsVideo(parameter: subJson)
+                        let titte = data["logo"].rawString();
+                        //if data["logo"].string != nil {awsVideo.logo = data["logo"].string  }
+                        awsVideo.logo = titte
+                        self.assetArray.append(awsVideo)
                     }
                 }
-            }
-            else {
+            }else {
+                
+                DispatchQueue.main.async {
+                    
                     self.showAPIResponseError(message: "No content found for this tag.");
                     self.btnCloseTapped(self.btnClose)
+                }
             }
-        }
-        else{
+        }else{
             
             timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
             
+        }
+        
+        if let title = self.assetArray.first?.videoName{
+            DBController.addHistory(with: self.codeScanned, title:title )
         }
         
         DispatchQueue.main.async() {

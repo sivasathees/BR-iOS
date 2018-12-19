@@ -10,6 +10,7 @@ target 'Broadkazt' do
 pod 'SDWebImage'
 pod 'MobilePlayer'
 pod 'JGProgressHUD'
+pod 'SVProgressHUD'
 
 end
 
