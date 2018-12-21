@@ -20,10 +20,12 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let logo = UIImage(named: "elstupid.png")
-        let imageView = UIImageView(image: logo)
-        imageView.contentMode = .scaleAspectFit
-        navigationItem.titleView = imageView;
+//        let logo = UIImage(named: "elstupid.png")
+//        let imageView = UIImageView(image: logo)
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.frame.size.height = 10
+//
+//        navigationItem.titleView = imageView;
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

@@ -78,6 +78,7 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
     }
     
     @IBAction func btnCloseTapped(_ sender: Any) {
+       
         DispatchQueue.main.async {
               UIApplication.shared.isStatusBarHidden = false;
         }

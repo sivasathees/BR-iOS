@@ -68,6 +68,11 @@ class MediaViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        func makeDefaultSize(){
+            
+            self.topConstraint.constant = 20
+            self.bottomConstraint.constant = 20
+        }
         if #available(iOS 11.0, *) {
             if let window = UIApplication.shared.keyWindow{
 
@@ -75,7 +80,11 @@ class MediaViewCell: UICollectionViewCell {
                 let bottomPadding = window.safeAreaInsets.bottom
                 self.topConstraint.constant = topPadding+20
                 self.bottomConstraint.constant = bottomPadding+20
+            }else{
+                makeDefaultSize()
             }
+        }else{
+            makeDefaultSize()
         }
        
     }
