@@ -2,6 +2,7 @@
 import UIKit
 import SwiftyJSON
 import AVFoundation
+import SVProgressHUD
 
 protocol BarcodeDelegate {
     func barcodeReaded(barcode: String)
@@ -35,12 +36,12 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(noInternet), name: NSNotification.Name(rawValue: "noInternet"), object: nil)
         
         
-        let navigationItem = UINavigationItem(title: "Title")
+//        let navigationItem = UINavigationItem(title: "Title")
         let logo = UIImage(named: "elstupid.png")
         let imageView = UIImageView(image: logo)
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView;
-        Navbar.items?.append(navigationItem)
+//        Navbar.items?.append(navigationItem)
         self.setupCamera()
 //        delegatemenu?.changeViewController(LeftMenu.go)
 //        delegatemenu?.barcodeScanned("BR1995N")
@@ -103,6 +104,7 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {
+     
         self.setNavigationBarItem()
 
         
@@ -132,23 +134,90 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         // This is the delegate'smethod that is called when a code is readed
-        for metadata in metadataObjects {
+//
+//        for metadata in metadataObjects {
+//
+//
+//            //delegatemenu?.changeViewController(LeftMenu.go)
+//            //delegatemenu?.barcodeScanned(code!)
+//
+//        }
+        
+        if let metadata  = metadataObjects.first{
+            
             let readableObject = metadata as! AVMetadataMachineReadableCodeObject
-            let code = readableObject.stringValue
-            
-            
-            self.dismiss(animated: true, completion: nil)
-            self.delegate?.barcodeReaded(barcode: code!)
             qrCodeiMAGE.isHidden = true;
-    
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "GoViewController") as! GoViewController
-            newViewController.barcodeScanned(code!)
+
+            guard let code  = readableObject.stringValue else{
+                self.captureSession.startRunning()
+                return
+            }
             
-            self.present(newViewController, animated: true, completion: nil)
-            //delegatemenu?.changeViewController(LeftMenu.go)
-            //delegatemenu?.barcodeScanned(code!)
+            SVProgressHUD.show()
+            
+//            self.delegate?.barcodeReaded(barcode: code)
+            
+            self.captureSession.stopRunning()
+            
+            func showNoContent(){
+                
+                let controller = UIAlertController(title: "Alert!", message: "No conent found for this tag", preferredStyle: .alert)
+                
+                let cancel = UIAlertAction(title: "CANCEL", style: .default) { (_) in
+                    
+                    controller.dismiss(animated: true, completion: nil)
+                    let nav  = self.storyboard?.instantiateViewController(withIdentifier: "TutorialViewController") as! UINavigationController
+                    let vc = nav.topViewController as! TutorialViewController
+                    vc.completion = {
+                        
+                        self.captureSession.startRunning()
+                        
+                    }
+                    
+                    self.present(nav, animated: true, completion: nil)
+                }
+                
+                let tryAgain = UIAlertAction(title: "TRY AGAIN", style: .default) { (_) in
+                    
+                    self.captureSession.startRunning()
+                }
+                
+                controller.addAction(cancel)
+                controller.addAction(tryAgain)
+                
+                self.present(controller, animated: true, completion: nil)
+                
+
+                
+            }
+            
+            NetworkManager.sharedInstance.getItemByCode(code) { (json) in
+               
+                DispatchQueue.main.async {
+                  
+                    SVProgressHUD.dismiss()
+                    let success = json["success"].bool;
+                    
+                    if (success != nil) {
+                        if(success)!{
+                            
+                            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let newViewController = storyBoard.instantiateViewController(withIdentifier: "GoViewController") as! GoViewController
+                            newViewController.barcodeScanned(code)
+                            newViewController.itemFetchedJSON = json
+                            self.present(newViewController, animated: true, completion: nil)
+                        }else {
+                            showNoContent()
+                        }
+                    }else{
+                        showNoContent()
+                    }
+             
+                }
            
+            }
+
+
         }
     }
 }
