@@ -222,9 +222,16 @@
                                 <constraint firstItem="Qnj-Nk-pKC" firstAttribute="centerY" secondItem="EsV-6I-tb7" secondAttribute="centerY" id="osd-FS-Slg"/>
                             </constraints>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" image="flahs-auto" id="Mq4-0e-1XG">
+                            <color key="tintColor" red="0.1058823529" green="0.32156862749999998" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="actionFlash:" destination="I9w-x4-mAi" id="XBT-Y4-AVX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="buttonTorch" destination="Mq4-0e-1XG" id="CjI-kc-55V"/>
                         <outlet property="cameraView" destination="JQy-XH-d2A" id="fTH-bI-yto"/>
                         <outlet property="qrCodeiMAGE" destination="861-kK-HmV" id="LPd-ak-qCb"/>
                         <outlet property="scannedText" destination="GRD-zE-KU5" id="79w-ZE-C8v"/>
@@ -417,7 +424,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <barButtonItem key="rightBarButtonItem" image="history" id="BpG-XV-ERz">
-                            <color key="tintColor" red="0.10691886395215988" green="0.32327881455421448" blue="0.68792223930358887" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.10588235294117647" green="0.32156862745098036" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="actionHistory:" destination="w4f-8N-Js6" id="YAA-H0-dsl"/>
                             </connections>
@@ -486,7 +493,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-QD-1FX">
-                                                    <rect key="frame" x="20" y="498" width="335" height="95"/>
+                                                    <rect key="frame" x="20" y="488" width="335" height="95"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="95" id="OUL-oH-u5a"/>
@@ -517,17 +524,6 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agp-RX-r7G">
-                                                    <rect key="frame" x="305" y="565" width="50" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="mvv-41-5Ea"/>
-                                                        <constraint firstAttribute="height" constant="50" id="vVA-dM-0Hb"/>
-                                                    </constraints>
-                                                    <state key="normal" backgroundImage="ic_support"/>
-                                                    <connections>
-                                                        <action selector="btnSettingsTapped:" destination="pwN-Wv-Ioh" eventType="touchUpInside" id="5J2-XB-P0f"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wa-xb-vdL">
                                                     <rect key="frame" x="20" y="64" width="30" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -539,6 +535,47 @@
                                                     <connections>
                                                         <action selector="btnCloseTapped:" destination="pwN-Wv-Ioh" eventType="touchUpInside" id="Zoz-yR-BDY"/>
                                                     </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agp-RX-r7G" customClass="BFPaperButton">
+                                                    <rect key="frame" x="295" y="558" width="60" height="60"/>
+                                                    <color key="backgroundColor" red="0.99607843139999996" green="0.89411764709999997" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="auW-9e-SnB"/>
+                                                        <constraint firstAttribute="width" constant="60" id="psH-I3-2H8"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="shopping-cart"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="touchDownAnimationDuration">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="touchUpAnimationDuration">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="liftedShadowOpacity">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="liftedShadowRadius">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="liftedShadowOffset">
+                                                            <size key="value" width="0.5" height="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="loweredShadowOffset">
+                                                            <size key="value" width="0.5" height="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="loweredShadowRadius">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="loweredShadowOpacity">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -553,17 +590,17 @@
                                             <constraint firstItem="4wa-xb-vdL" firstAttribute="top" secondItem="3tI-d0-8K5" secondAttribute="top" constant="64" id="8EV-W8-BkS"/>
                                             <constraint firstItem="4wa-xb-vdL" firstAttribute="leading" secondItem="3tI-d0-8K5" secondAttribute="leading" constant="20" id="CEc-3X-DGg"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="3zO-hl-86C" secondAttribute="bottom" constant="12" id="CmK-Mt-Y7p"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="agp-RX-r7G" secondAttribute="trailing" constant="12" id="EgR-1D-cXW"/>
                                             <constraint firstAttribute="trailing" secondItem="eAN-sU-KFI" secondAttribute="trailing" constant="20" id="GHT-fY-KiW"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="agp-RX-r7G" secondAttribute="trailing" constant="12" id="IPc-tl-PJA"/>
-                                            <constraint firstItem="nod-H6-cIT" firstAttribute="top" secondItem="agp-RX-r7G" secondAttribute="bottom" constant="-14" id="Kaa-4p-t37"/>
                                             <constraint firstItem="3zO-hl-86C" firstAttribute="top" secondItem="nod-H6-cIT" secondAttribute="bottom" constant="8" id="Mvj-J1-JwC"/>
                                             <constraint firstItem="nod-H6-cIT" firstAttribute="leading" secondItem="3tI-d0-8K5" secondAttribute="leadingMargin" constant="12" id="N59-Qn-0Q8"/>
                                             <constraint firstItem="ftK-D2-SEs" firstAttribute="centerX" secondItem="3tI-d0-8K5" secondAttribute="centerX" id="PGT-YZ-ZPu"/>
-                                            <constraint firstItem="nod-H6-cIT" firstAttribute="top" secondItem="e0g-QD-1FX" secondAttribute="bottom" constant="8" id="Q6j-9o-mCI"/>
+                                            <constraint firstItem="nod-H6-cIT" firstAttribute="top" secondItem="e0g-QD-1FX" secondAttribute="bottom" constant="18" id="Q6j-9o-mCI"/>
                                             <constraint firstItem="AJ2-jd-oSc" firstAttribute="centerY" secondItem="WAZ-Di-zQL" secondAttribute="centerY" id="QTV-fL-UwD"/>
                                             <constraint firstItem="eAN-sU-KFI" firstAttribute="width" secondItem="AJ2-jd-oSc" secondAttribute="width" id="QyQ-8X-KG8"/>
                                             <constraint firstAttribute="trailing" secondItem="2bu-UD-P7T" secondAttribute="trailing" id="RxV-CK-dCw"/>
                                             <constraint firstItem="eAN-sU-KFI" firstAttribute="centerY" secondItem="WAZ-Di-zQL" secondAttribute="centerY" id="X5g-5I-BU9"/>
+                                            <constraint firstItem="3zO-hl-86C" firstAttribute="top" secondItem="agp-RX-r7G" secondAttribute="bottom" constant="11" id="afe-1X-k7G"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="nod-H6-cIT" secondAttribute="trailing" constant="70" id="b57-fE-EDu"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="3zO-hl-86C" secondAttribute="trailing" constant="12" id="hto-NH-hpe"/>
                                             <constraint firstItem="ftK-D2-SEs" firstAttribute="centerY" secondItem="3tI-d0-8K5" secondAttribute="centerY" id="jA8-fj-M7J"/>
@@ -669,7 +706,7 @@
         <!--Navigation Controller-->
         <scene sceneID="R2F-ei-fK8">
             <objects>
-                <navigationController storyboardIdentifier="TutorialViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EHc-Sj-k4U" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TutorialViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EHc-Sj-k4U" customClass="NavigationController" customModule="Broadkazt" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EKX-Ry-Cju">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -689,14 +726,15 @@
     <resources>
         <image name="camera" width="266" height="419.760009765625"/>
         <image name="elstupid" width="330" height="78"/>
+        <image name="flahs-auto" width="22" height="22"/>
         <image name="history" width="22" height="22"/>
         <image name="ic_close" width="72" height="72"/>
         <image name="ic_language" width="72" height="72"/>
         <image name="ic_play" width="70" height="70"/>
         <image name="ic_qrcode" width="72" height="72"/>
-        <image name="ic_support" width="21.639345169067383" height="21.639345169067383"/>
         <image name="menu-icon" width="262.07998657226562" height="240"/>
         <image name="qrcode" width="58.799999237060547" height="58.799999237060547"/>
         <image name="rqicon_1" width="111" height="267"/>
+        <image name="shopping-cart" width="96" height="96"/>
     </resources>
 </document>

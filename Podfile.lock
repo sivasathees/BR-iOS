@@ -1,4 +1,5 @@
 PODS:
+  - BFPaperButton (2.1.2)
   - JGProgressHUD (2.0.1)
   - MobilePlayer (1.2.0)
   - SDWebImage (4.2.2):
@@ -8,6 +9,7 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - BFPaperButton
   - JGProgressHUD
   - MobilePlayer
   - SDWebImage
@@ -16,6 +18,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BFPaperButton
     - JGProgressHUD
     - MobilePlayer
     - SDWebImage
@@ -23,12 +26,13 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  BFPaperButton: a25fdd3ff6898bdbd5cc9b1334ca36adb0296b9f
   JGProgressHUD: 63ad7d8850702a91625fb9ed8e94eab706c03d81
   MobilePlayer: 069b13482499f14c25b6ce53f63a91e17975b073
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: a86bc280824ebc23ed18eac5b371de87839edf96
+PODFILE CHECKSUM: 3c963fd1132305c61a3d00ba3d3b28a540ddd3a8
 
 COCOAPODS: 1.6.0.beta.2

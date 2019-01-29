@@ -18,6 +18,8 @@ class AwsVideo {
     let awsUrl                 :String!
     let duration               :Int!
     var logo                     :String!
+    var webStatus:Bool = false
+    var webURL:String = String()
     
     
     required init(parameter: JSON) {
@@ -29,6 +31,8 @@ class AwsVideo {
         awsUrl               = parameter["awsUrl"].stringValue
         duration             = parameter["duration"].intValue
         logo                 = "none"
+        webStatus = parameter["webStatus"].bool ?? false
+        webURL = parameter["webUrl"].string ?? ""
         print(logo);
 }
 }

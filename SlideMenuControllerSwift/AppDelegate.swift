@@ -9,7 +9,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var reach: InternetManager?
+    var torchModeImage:UIImage = #imageLiteral(resourceName: "flahs-auto")
+    
     fileprivate func createMenuView() {
+        
         
         // create viewController code...
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

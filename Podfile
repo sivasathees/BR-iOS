@@ -11,6 +11,7 @@ pod 'SDWebImage'
 pod 'MobilePlayer'
 pod 'JGProgressHUD'
 pod 'SVProgressHUD'
+pod 'BFPaperButton'
 
 end
 

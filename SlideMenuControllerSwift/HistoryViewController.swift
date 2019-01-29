@@ -135,4 +135,13 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
         }
     }
+    
+    
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .portrait
+    }
 }
