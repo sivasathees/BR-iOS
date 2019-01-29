@@ -26,7 +26,11 @@ class TutorialViewController: UIViewController {
 //        imageView.frame.size.height = 10
 //
 //        navigationItem.titleView = imageView;
+
     }
+    
+    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "HistoryViewController"{

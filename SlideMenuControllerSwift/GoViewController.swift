@@ -73,8 +73,17 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
         
 //        self.view.addSubview(webV)
         
-        let svc = SFSafariViewController(url: URL(string:self.caseUrl)!)
-        self.present(svc, animated: true, completion: nil)
+//        let svc = SFSafariViewController(url: URL(string:self.caseUrl)!)
+//        self.present(svc, animated: true, completion: nil)
+        
+        if let url = URL(string:self.caseUrl){
+            
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
     
     @IBAction func btnCloseTapped(_ sender: Any) {
@@ -123,10 +132,8 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
                 }
                 for (_, subJson) in data["videos"] {
                     if subJson["thumbnail"].string != nil {
-                       // print(description)
                         let awsVideo = AwsVideo(parameter: subJson)
-                        let titte = data["logo"].rawString();
-                        //if data["logo"].string != nil {awsVideo.logo = data["logo"].string  }
+                        let titte = subJson["corporateLogo"].rawString();
                         awsVideo.logo = titte
                         self.assetArray.append(awsVideo)
                     }
@@ -185,8 +192,14 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
         return true
     }
     
+    
     override open var shouldAutorotate: Bool {
         return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        
+        return .portrait
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int{
@@ -207,6 +220,8 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
         cell.bgSeconds.layer.cornerRadius = 5.0
         let phasset = assetArray[indexPath.row]
         cell.fillData(thumbUrl: phasset,caseBoolean: caseBool,caseUrlStr: caseUrl)
+        cell.btnSettings.tag = indexPath.row
+        cell.btnSettings.addTarget(self, action: #selector(self.webURL(_:)), for: .touchUpInside)
         cell.playiconImage.tag = indexPath.row
         return cell
         
@@ -227,6 +242,22 @@ class GoViewController: UIViewController, GoProtocol, UICollectionViewDataSource
         let size = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height )
         //
         return size
+        
+    }
+    
+    @objc private func webURL(_ sender:UIButton){
+        
+        let video = assetArray[sender.tag]
+        
+        
+        if let url = URL(string:video.webURL){
+            
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
         
     }
     

@@ -16,6 +16,9 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     @IBOutlet weak var scannedText: UILabel!
     @IBOutlet weak var qrCodeiMAGE: UIImageView!
     @IBOutlet weak var Navbar: UINavigationBar!
+    @IBOutlet weak var buttonTorch: UIBarButtonItem!
+    
+    let appDelegate =  UIApplication.shared.delegate as! AppDelegate
     
     var videoCaptureDevice: AVCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     var device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
@@ -27,6 +30,8 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.buttonTorch.image = self.appDelegate.torchModeImage
         self.view.backgroundColor = UIColor.clear
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "hasInternet"), object: nil)
@@ -34,7 +39,6 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
         NotificationCenter.default.addObserver(self, selector: #selector(hasInternet), name: NSNotification.Name(rawValue: "hasInternet"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(noInternet), name: NSNotification.Name(rawValue: "noInternet"), object: nil)
-        
         
 //        let navigationItem = UINavigationItem(title: "Title")
         let logo = UIImage(named: "elstupid.png")
@@ -47,10 +51,40 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
 //        delegatemenu?.barcodeScanned("BR1995N")
     }
     
-
+    @IBAction func actionFlash(_ sender: UIBarButtonItem) {
+        
+        if sender.image == #imageLiteral(resourceName: "flahs-auto"){
+            sender.image = #imageLiteral(resourceName: "flash-on")
+        }else if sender.image == #imageLiteral(resourceName: "flash-on"){
+            sender.image = #imageLiteral(resourceName: "flash-off")
+        }else{
+            sender.image = #imageLiteral(resourceName: "flahs-auto")
+        }
+        
+        self.appDelegate.torchModeImage = sender.image!
+        self.changeTorchMode()
+      
+    }
+    
+    private func changeTorchMode(){
+        
+        let image = self.appDelegate.torchModeImage
+        if self.videoCaptureDevice.hasTorch{
+            
+            try? self.videoCaptureDevice.lockForConfiguration()
+            self.videoCaptureDevice.torchMode = image == #imageLiteral(resourceName: "flahs-auto") ? .auto : image == #imageLiteral(resourceName: "flash-on") ? .on : .off
+            self.videoCaptureDevice.unlockForConfiguration()
+            
+        }
+    }
+    
     @objc func hasInternet () {
         if (captureSession.isRunning == false) {
+          
             captureSession.startRunning();
+            DispatchQueue.main.async {
+                self.changeTorchMode()
+            }
         }
     }
     
@@ -76,6 +110,8 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             cameraView.layer.addSublayer(videoPreviewLayer)
         }
         
+
+        
         let metadataOutput = AVCaptureMetadataOutput()
         if self.captureSession.canAddOutput(metadataOutput) {
             self.captureSession.addOutput(metadataOutput)
@@ -89,6 +125,14 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         self.captureSession.stopRunning()
     }
     
+ 
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .portrait
+    }
     override var prefersStatusBarHidden : Bool {
         return false
     }
@@ -120,9 +164,6 @@ class QrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         super.viewWillAppear(animated)
     }
     
-    override open var shouldAutorotate: Bool {
-        return false
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

@@ -52,8 +52,10 @@ class MediaViewCell: UICollectionViewCell {
     @IBOutlet weak var playiconImage: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.btnClose.layer.cornerRadius = 15.0
+
     }
+    
+    
     
     override var isSelected: Bool {
         didSet {
@@ -67,6 +69,12 @@ class MediaViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        self.btnClose.layer.cornerRadius = self.btnClose.frame.height/2
+        self.btnClose.clipsToBounds = true
+        
+        self.btnSettings.layer.cornerRadius = self.btnSettings.frame.height/2
+        self.btnSettings.clipsToBounds = true
         
         func makeDefaultSize(){
             
@@ -128,12 +136,8 @@ class MediaViewCell: UICollectionViewCell {
             }
         }
 
-        if(caseBoolean == true){
-            self.btnSettings.isHidden = false
-        }
-        else{
-            self.btnSettings.isHidden = true
-        }
+        self.btnSettings.isHidden = thumbUrl.webStatus == false
+
         
         if(thumbUrl.awsUrl==nil || thumbUrl.awsUrl == "" ) {
             self.playiconImage.isHidden = true;
